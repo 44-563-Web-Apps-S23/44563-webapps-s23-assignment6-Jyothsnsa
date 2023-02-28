@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
- 
-<body>
+ <body>
     <h1>Painter entry by Jyothsna Naredla</h1>
 <h2>Getting input</h2>
-
 <form>
     <label for="form_Painter">The hidden painter name</label>
     <input type ="password" id="password" name="form_Painter" min=10 max=50 step=2 value="Monet"> <br>
@@ -14,20 +12,15 @@
 
     <input type="button" onclick="checkPainter()" value="Check the guess">
 </form>
-
-
 <p id="result">Result</p>
-
 <script>
 var good=0
 var oops=0 
-
 function checkPainter (){
     console.log("Getting form values")
-    password = document.getElementById("form1_age").value
-    check = document.getElementById("form1_nick").value
+    password = document.getElementById("password").value
+    check = document.getElementById("check").value
     confirmed = confirm("Are these the values? "+password+" and "+check)
-    
     out = document.getElementById("result")
     if(password==check){
         alert("You got it right")
