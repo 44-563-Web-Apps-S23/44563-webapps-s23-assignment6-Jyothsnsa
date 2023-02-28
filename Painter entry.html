@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html>
- <body>
+<body>
     <h1>Painter entry by Jyothsna Naredla</h1>
-<h2>Getting input</h2>
-<form>
-    <label for="form_Painter">The hidden painter name</label>
-    <input type ="password" id="password" name="form_Painter" min=10 max=50 step=2 value="Monet"> <br>
+    <h2>Getting input</h2>
+    <form>
+        <label for="form_Painter">The hidden painter name</label>
+        <input type="password" id="password" name="form_Painter" min=10 max=50 step=2 value="Monet"> <br>
 
-    <label for="form_check">Guess the painter</label>
-    <input type ="text" id="check" name="form_check" min=10 max=50 step=2> <br>
+        <label for="form_check">Guess the painter</label>
+        <input type="text" id="check" name="form_check" min=10 max=50 step=2> <br>
 
-    <input type="button" onclick="checkPainter()" value="Check the guess">
-</form>
-<p id="result">Result</p>
-<script>
-var good=0
-var oops=0 
-function checkPainter (){
-    console.log("Getting form values")
-    password = document.getElementById("password").value
-    check = document.getElementById("check").value
-    confirmed = confirm("Are these the values? "+password+" and "+check)
-    out = document.getElementById("result")
-    if(password==check){
-        alert("You got it right")
-        good=good+1
-    } else {
-        oops=oops+1
-        alert('Sorry')
-    }
-out.innerHTML = "Right count:"+good+"Wrong count:"+oops
-}
-</script>
+        <input type="button" onclick="checkPainter()" value="Check the guess">
+    </form>
+    <p id="result">Result</p>
+    <div class="container">
+        <img src="Neillia.jpg" onclick="selectImage()" alt="Neillia" style="width: 100px;height: 100px;">
+    </div>
+    <script>
+        var good = 0
+        var oops = 0
+        var useImage = 1
+        function checkPainter() {
+            console.log("Getting form values")
+            password = document.getElementById("password").value
+            check = document.getElementById("check").value
+            confirmed = confirm("Are these the values? " + password + " and " + check)
+            out = document.getElementById("result")
+            if (password == check) {
+                alert("You got it right")
+                good = good + 1
+            } else {
+                oops = oops + 1
+                alert('Sorry')
+            }
+            out.innerHTML = "Right count:" + good + "Wrong count:" + oops
+        }
+        function selectImage() {
+            switch (useImage) {
+                case 1: useImage = useImage + 1
+                    image.src = "Ageratum.jpg";
+                    break;
+                case 2: useImage = useImage + 1
+                    image.src = "Rosemary.jpg";
+                    break;
+                case 3: useImage = useImage + 1
+                    image.src = "Neillia.jpg";
+                    break;
+            }
+        }
+    </script>
+
 
 </body>
-</html> 
+
+</html>
